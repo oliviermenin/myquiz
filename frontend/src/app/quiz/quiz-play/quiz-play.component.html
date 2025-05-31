@@ -1,0 +1,69 @@
+<div class="container">
+  <div *ngIf="loading">
+    <app-loading></app-loading>
+  </div>
+  
+  <div *ngIf="error">
+    <app-error [message]="errorMessage" [retryFn]="loadQuiz.bind(this)"></app-error>
+  </div>
+  
+  <div *ngIf="!loading && !error && questions.length > 0 && !quizStarted" class="quiz-container">
+    <mat-card class="user-info-card">
+      <mat-card-header>
+        <mat-card-title>{{ categoryName }}</mat-card-title>
+        <mat-card-subtitle>Entrez vos informations pour commencer</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Votre nom</mat-label>
+          <input matInput [(ngModel)]="userName" placeholder="Entrez votre nom" required>
+        </mat-form-field>
+        <p class="quiz-info">
+          <mat-icon>info</mat-icon>
+          Ce quiz contient {{ questions.length }} questions
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="startQuiz()" [disabled]="!userName.trim()">
+          <mat-icon>play_arrow</mat-icon>
+          Commencer le quiz
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <div *ngIf="!loading && !error && questions.length > 0 && quizStarted" class="quiz-container">
+    <mat-card class="quiz-card">
+      <mat-card-header>
+        <mat-card-title>{{ categoryName }} - {{ userName }}</mat-card-title>
+        <mat-card-subtitle>
+          Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}
+        </mat-card-subtitle>
+        <div class="timer">
+          <mat-icon>timer</mat-icon> {{ formatTime(timeLeft) }}
+        </div>
+      </mat-card-header>
+      
+      <mat-card-content *ngIf="currentQuestion">
+        <h2 class="question-text">{{ currentQuestion.question }}</h2>
+        
+        <mat-radio-group class="answer-options" [(ngModel)]="selectedAnswer">
+          <mat-radio-button *ngFor="let answer of currentQuestion.reponses" [value]="answer.id" class="answer-option">
+            {{ answer.reponse }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </mat-card-content>
+      
+      <mat-card-actions>
+        <button mat-button color="accent" (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">
+          <mat-icon>arrow_back</mat-icon> Previous
+        </button>
+        <button mat-raised-button color="primary" (click)="nextQuestion()" [disabled]="!selectedAnswer">
+          {{ isLastQuestion ? 'Submit' : 'Next' }} <mat-icon>{{ isLastQuestion ? 'check' : 'arrow_forward' }}</mat-icon>
+        </button>
+      </mat-card-actions>
+      
+      <mat-progress-bar mode="determinate" [value]="(currentQuestionIndex / questions.length) * 100"></mat-progress-bar>
+    </mat-card>
+  </div>
+</div>

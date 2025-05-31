@@ -1,0 +1,39 @@
+<div class="container">
+  <div *ngIf="loading">
+    <app-loading></app-loading>
+  </div>
+  
+  <div *ngIf="error">
+    <app-error [message]="errorMessage" [retryFn]="loadCategory.bind(this)"></app-error>
+  </div>
+  
+  <div *ngIf="!loading && !error && category">
+    <div class="back-button">
+      <button mat-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon> Retour au Tableau de bord
+      </button>
+    </div>
+    
+    <mat-card class="quiz-start-card">
+      <mat-card-header>
+        <mat-card-title>{{ category.name }}</mat-card-title>
+        <mat-card-subtitle>Êtes-vous prêt à commencer ce quiz ?</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div class="category-icon">
+          <mat-icon>quiz</mat-icon>
+        </div>
+        <p class="quiz-description">
+          Testez vos connaissances dans la catégorie <strong>{{ category.name }}</strong>
+        </p>
+      </mat-card-content>
+      
+  <mat-card-actions style="display: flex; justify-content: center;">
+    <button mat-raised-button color="primary" (click)="startQuiz()" class="start-button">
+      <mat-icon>play_arrow</mat-icon> Commencer le Quiz
+    </button>
+  </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

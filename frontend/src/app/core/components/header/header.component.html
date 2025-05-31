@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="onMenuClick()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  
+  <span>Quiz</span>
+  
+  <span class="spacer"></span>
+    
+  <button mat-button routerLink="/quizzes">
+    <mat-icon>quiz</mat-icon>
+    Quiz
+  </button>
+  
+  <button mat-button routerLink="/leaderboard">
+    <mat-icon>leaderboard</mat-icon>
+    Classement
+  </button>
+</mat-toolbar>

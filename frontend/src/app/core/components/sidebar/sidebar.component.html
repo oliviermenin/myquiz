@@ -1,0 +1,18 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/dashboard" (click)="onSidenavClose()">
+    <mat-icon matListItemIcon>dashboard</mat-icon>
+    <span matListItemTitle>Tableau de bord</span>
+  </a>
+  
+  <a mat-list-item routerLink="/quizzes" (click)="onSidenavClose()">
+    <mat-icon matListItemIcon>quiz</mat-icon>
+    <span matListItemTitle>Quiz</span>
+  </a>
+  
+  <a mat-list-item routerLink="/leaderboard" (click)="onSidenavClose()">
+    <mat-icon matListItemIcon>leaderboard</mat-icon>
+    <span matListItemTitle>Classement</span>
+  </a>
+    
+  <mat-divider></mat-divider>
+</mat-nav-list>

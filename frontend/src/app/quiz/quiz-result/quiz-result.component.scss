@@ -1,0 +1,95 @@
+.container {
+  padding: 20px;
+}
+
+.result-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.result-card {
+  margin-bottom: 20px;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0;
+  
+  &.success {
+    color: #4caf50;
+  }
+  
+  &.good {
+    color: #2196f3;
+  }
+  
+  &.average {
+    color: #ff9800;
+  }
+  
+  &.poor {
+    color: #f44336;
+  }
+}
+
+.score-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 8px solid currentColor;
+  margin-bottom: 24px;
+}
+
+.score-percentage {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.score-message {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  
+  mat-icon {
+    margin-right: 16px;
+    color: #1976d2;
+  }
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}

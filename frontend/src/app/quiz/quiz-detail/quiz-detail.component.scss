@@ -1,0 +1,56 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.back-button {
+  margin-bottom: 2rem;
+}
+
+.quiz-start-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.category-icon {
+  margin: 2rem 0;
+  
+  mat-icon {
+    font-size: 4rem;
+    width: 4rem;
+    height: 4rem;
+    color: #1976d2;
+  }
+}
+
+.quiz-description {
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+  color: #666;
+}
+
+.start-button {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  margin-top: 1rem;
+  
+  mat-icon {
+    margin-right: 0.5rem;
+  }
+}
+
+mat-card-header {
+  justify-content: center;
+  text-align: center;
+}
+
+mat-card-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+mat-card-subtitle {
+  font-size: 1rem;
+  color: #666;
+}
