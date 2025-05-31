@@ -24,8 +24,8 @@ Avant de commencer, assurez-vous d'avoir installé :
 ### 1. Cloner le projet
 
 ```bash
-git clone git@github.com:oliviermenin/myquiz.git
-cd quiz-app
+git clone git@github.com:oliviermenin/myquiz.git myquiz
+cd myquiz
 ```
 
 ### 2. Configuration du Backend Laravel
