@@ -24,7 +24,7 @@ Avant de commencer, assurez-vous d'avoir installé :
 ### 1. Cloner le projet
 
 ```bash
-git clone <url-du-repository>
+git clone git@github.com:oliviermenin/myquiz.git
 cd quiz-app
 ```
 
@@ -117,7 +117,7 @@ docker compose up --build
 
 Une fois tous les services démarrés, vous pouvez accéder à :
 
-- Application Frontend (Angular)** : http://localhost:4200
+- Application Frontend (Angular) : http://localhost:4200
 
 ## Base de données
 
