@@ -4,7 +4,7 @@ Une application de quiz développée avec Angular (frontend) et Laravel (backend
 
 ## Fonctionnalités
 
-- Interface utilisateur moderne avec Angular 17
+- Interface utilisateur avec Angular
 - API REST avec Laravel
 - Base de données MySQL
 - Système de quiz par catégories
